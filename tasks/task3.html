@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log List Items</title>
+</head>
+<body>
+
+<ul id="myList">
+    <li>Fruits</li>
+    <li>Apple</li>
+    <li>Mango</li>
+    <li>orange</li>
+</ul>
+
+<script>
+    var listItems = document.querySelectorAll('#myList li');
+    
+    listItems.forEach(function(item) {
+        console.log(item.textContent);
+    });
+</script>
+
+</body>
+</html>

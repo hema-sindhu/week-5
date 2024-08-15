@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Incremental Styling</title>
+    <style>
+        .styled-sibling {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<div id="startElement">Start Element</div>
+<div>Sibling 1</div>
+<div>Sibling 2</div>
+<div>Sibling 3</div>
+<div>Sibling 4</div>
+
+<script>
+   
+    var startElement = document.getElementById('startElement');
+    
+  
+    var colorArray = ['lightblue', 'lightgreen', 'lightcoral', 'lightyellow'];
+    var currentElement = startElement.nextElementSibling;
+    var index = 0;
+
+    while (currentElement) {
+        currentElement.classList.add('styled-sibling');
+        currentElement.style.backgroundColor = colorArray[index % colorArray.length];
+        index++;
+        currentElement = currentElement.nextElementSibling;
+    }
+</script>
+
+</body>
+</html>

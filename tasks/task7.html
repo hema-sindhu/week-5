@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Span Text</title>
+</head>
+<body>
+
+<span id="mySpan">Original Text</span>
+<button onclick="changeText()">Change Text</button>
+
+<script>
+    function changeText() {
+       
+        var span = document.getElementById('mySpan');
+        
+        span.textContent = 'Updated Text';
+    }
+</script>
+
+</body>
+</html>

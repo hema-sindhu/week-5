@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style First and Last Child</title>
+    <style>
+        .first-child {
+            background-color: lightgreen;
+        }
+        .last-child {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+<div id="parentDiv">
+    <div>This is an apple</div>
+    <div>This is a mouse</div>
+    <div>This is the last element</div>
+</div>
+
+<script>
+  
+    var parent = document.getElementById('parentDiv');
+    
+    var firstChild = parent.firstElementChild;
+    var lastChild = parent.lastElementChild;
+    
+   
+    firstChild.classList.add('first-child');
+    lastChild.classList.add('last-child');
+</script>
+
+</body>
+</html>

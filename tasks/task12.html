@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clone and Append Div</title>
+</head>
+<body>
+
+<div id="sourceDiv">
+    <p>Hello world</p>
+    <p>Web plus academy</p>
+</div>
+
+<div id="targetDiv">
+    <p>This is the target div.</p>
+</div>
+
+<button onclick="cloneAndAppendDiv()">Clone and Append Div</button>
+
+<script>
+    function cloneAndAppendDiv() {
+       
+        var sourceDiv = document.getElementById('sourceDiv');
+        
+        var clone = sourceDiv.cloneNode(true);
+        
+        var targetDiv = document.getElementById('targetDiv');
+        
+        targetDiv.appendChild(clone);
+    }
+</script>
+
+</body>
+</html>

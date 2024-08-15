@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Last Child</title>
+</head>
+<body>
+
+<div id="myDiv">
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, dolorum?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita veniam perferendis velit, voluptas maiores laudantium?</p>
+</div>
+
+<button onclick="removeLastChild()">Remove Last Child</button>
+
+<script>
+    function removeLastChild() {
+      
+        var div = document.getElementById('myDiv');
+        
+        if (div.lastElementChild) {
+           
+            div.removeChild(div.lastElementChild);
+        }
+    }
+</script>
+
+</body>
+</html>

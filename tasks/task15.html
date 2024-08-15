@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Movement Tracker</title>
+    <style>
+        #trackingDiv {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #coordinates {
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<div id="trackingDiv">
+    Move your mouse here
+</div>
+<div id="coordinates">X: 0, Y: 0</div>
+
+<script>
+   
+    const trackingDiv = document.getElementById('trackingDiv');
+    const coordinates = document.getElementById('coordinates');
+
+    trackingDiv.addEventListener('mousemove', function(event) {
+        
+        const rect = trackingDiv.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        coordinates.textContent = `X: ${x}, Y: ${y}`;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span class="error" id="nameError"></span>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <span class="error" id="emailError"></span>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('nameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        let hasError = false;
+        if (name === '') {
+            document.getElementById('nameError').textContent = 'Name is required.';
+            hasError = true;
+        }
+        if (email === '') {
+            document.getElementById('emailError').textContent = 'Email is required.';
+            hasError = true;
+        } else if (!validateEmail(email)) {
+            document.getElementById('emailError').textContent = 'Invalid email address.';
+            hasError = true;
+        }
+        if (!hasError) {
+            alert('Form submitted successfully!');
+        }
+    });
+   
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Class Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<div class="myClass">Hello</div>
+<div class="myClass">Web Plus Academy</div>
+<div class="myClass">Full Stack Development</div>
+
+<button onclick="toggleHighlight()">Toggle Highlight</button>
+
+<script>
+    function toggleHighlight() {
+       
+        var elements = document.querySelectorAll('.myClass');
+        
+        elements.forEach(function(element) {
+            element.classList.toggle('highlight');
+        });
+    }
+</script>
+
+</body>
+</html>

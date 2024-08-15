@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Resize Logger</title>
+    <style>
+        .dimensions {
+            font-size: 20px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Resize the window to see the dimensions displayed below.</h1>
+<div class="dimensions" id="dimensionsDisplay"></div>
+
+<script>
+   
+    function displayWindowDimensions() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const dimensionsDisplay = document.getElementById('dimensionsDisplay');
+        dimensionsDisplay.textContent = `Window dimensions: ${width}x${height}`;
+    }
+
+    window.addEventListener('resize', displayWindowDimensions);
+
+    displayWindowDimensions();
+</script>
+
+</body>
+</html>

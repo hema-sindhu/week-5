@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Field Highlight</title>
+    <style>
+        .highlight {
+            border: 2px solid #00f; 
+        }
+
+        .default-border {
+            border: 1px solid #ccc; 
+        }
+    </style>
+</head>
+<body>
+
+<form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" class="default-border">
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" class="default-border">
+    <br><br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" class="default-border"></textarea>
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+   
+    function addHighlight(event) {
+        event.target.classList.add('highlight');
+    }
+
+    function removeHighlight(event) {
+        event.target.classList.remove('highlight');
+    }
+
+    const formElements = document.querySelectorAll('#myForm input, #myForm textarea');
+
+    formElements.forEach(element => {
+        element.addEventListener('focus', addHighlight);
+        element.addEventListener('blur', removeHighlight);
+    });
+</script>
+
+</body>
+</html>

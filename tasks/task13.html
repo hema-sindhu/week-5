@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Click Event</title>
+    <style>
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<button id="myButton">Click Me!</button>
+<div id="message"></div>
+
+<script>
+  
+    const button = document.getElementById('myButton');
+
+    button.addEventListener('click', function() {
+    
+        console.log('Button was clicked!');
+        
+        const messageDiv = document.getElementById('message');
+        messageDiv.textContent = 'Heartly Welcome!!';
+    });
+</script>
+
+</body>
+</html>
